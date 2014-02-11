@@ -1,0 +1,205 @@
+{% extends "home/layout.html" %}
+
+{% block body %}
+
+    <style type="text/css">
+    .clock_label {
+        margin-top: -10px;
+    }
+    .clock_header {
+        margin-bottom: -10px;
+    }
+
+    #wc_logo_year {
+        height: 100px;
+    }
+
+    #wc_logo_cup {
+        height: 200px;
+        width: 200px;
+        margin-left: -40px;
+        margin-top:15px;
+
+    }
+
+    body {
+        /*background-image:url('static/img/wc_logo_year.jpg')*/
+    }
+
+    .wc_nav_tab {
+        height: 100px;
+    }
+
+        /* custom inclusion of right, left and below tabs */
+
+    .tabs-below > .nav-tabs,
+    .tabs-right > .nav-tabs,
+    .tabs-left > .nav-tabs {
+        border-bottom: 0;
+    }
+
+    .tab-content > .tab-pane,
+    .pill-content > .pill-pane {
+        display: none;
+    }
+
+    .tab-content > .active,
+    .pill-content > .active {
+        display: block;
+    }
+
+    .tabs-below > .nav-tabs {
+        border-top: 1px solid #ddd;
+    }
+
+    .tabs-below > .nav-tabs > li {
+        margin-top: -1px;
+        margin-bottom: 0;
+    }
+
+    .tabs-below > .nav-tabs > li > a {
+        -webkit-border-radius: 0 0 4px 4px;
+        -moz-border-radius: 0 0 4px 4px;
+        border-radius: 0 0 4px 4px;
+    }
+
+    .tabs-below > .nav-tabs > li > a:hover,
+    .tabs-below > .nav-tabs > li > a:focus {
+        border-top-color: #ddd;
+        border-bottom-color: transparent;
+    }
+
+    .tabs-below > .nav-tabs > .active > a,
+    .tabs-below > .nav-tabs > .active > a:hover,
+    .tabs-below > .nav-tabs > .active > a:focus {
+        border-color: transparent #ddd #ddd #ddd;
+    }
+
+    .tabs-left > .nav-tabs > li,
+    .tabs-right > .nav-tabs > li {
+        float: none;
+    }
+
+    .tabs-left > .nav-tabs > li > a,
+    .tabs-right > .nav-tabs > li > a {
+        min-width: 74px;
+        margin-right: 0;
+        margin-bottom: 3px;
+    }
+
+    .tabs-left > .nav-tabs {
+        float: left;
+        margin-right: 19px;
+        border-right: 1px solid #ddd;
+    }
+
+    .tabs-left > .nav-tabs > li > a {
+        margin-right: -1px;
+        -webkit-border-radius: 4px 0 0 4px;
+        -moz-border-radius: 4px 0 0 4px;
+        border-radius: 4px 0 0 4px;
+    }
+
+    .tabs-left > .nav-tabs > li > a:hover,
+    .tabs-left > .nav-tabs > li > a:focus {
+        border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+    }
+
+    .tabs-left > .nav-tabs .active > a,
+    .tabs-left > .nav-tabs .active > a:hover,
+    .tabs-left > .nav-tabs .active > a:focus {
+        border-color: #ddd transparent #ddd #ddd;
+        *border-right-color: #ffffff;
+    }
+
+    .tabs-right > .nav-tabs {
+        float: right;
+        margin-left: 19px;
+        border-left: 1px solid #ddd;
+    }
+
+    .tabs-right > .nav-tabs > li > a {
+        margin-left: -1px;
+        -webkit-border-radius: 0 4px 4px 0;
+        -moz-border-radius: 0 4px 4px 0;
+        border-radius: 0 4px 4px 0;
+    }
+
+    .tabs-right > .nav-tabs > li > a:hover,
+    .tabs-right > .nav-tabs > li > a:focus {
+        border-color: #eeeeee #eeeeee #eeeeee #dddddd;
+    }
+
+    .tabs-right > .nav-tabs .active > a,
+    .tabs-right > .nav-tabs .active > a:hover,
+    .tabs-right > .nav-tabs .active > a:focus {
+        border-color: #ddd #ddd #ddd transparent;
+        border-left-color: #ffffff;
+    }
+
+    .centered-team-name {
+        text-align: center;
+    }
+
+    .team-row {
+        margin-bottom: 30px;
+    }
+
+    .team-img-small {
+        margin-left: 20%;
+        width: 60%;
+    }
+
+
+    </style>
+
+{#    <div class="row-fluid">#}
+{#        <div class="col-md-3">#}
+{#            <img src="static/img/wc_logo_year.jpg" id="wc_logo_year">#}
+{#        </div>#}
+{#        <h1>#}
+{##}
+{#            Hello World...Cup!#}
+{#        </h1>#}
+{#    </div>#}
+{#    <hr>#}
+
+    <div class="container">
+
+    {% block header %}
+        <div class="row">
+            <div class="col-md-9">
+                <div class="col-md-3">
+                    {% block logo_img %}
+                    {% endblock %}
+                </div>
+                <div class="col-md-9">
+                <div class="col-md-12">
+                    <h2 style="margin-bottom: 100px;">Title</h2>
+                </div>
+                    {% block navbar %}
+                    {% endblock %}
+                </div>
+            </div>
+            <div class="col-md-3">
+                {% block clock %}
+                {% endblock %}
+            </div>
+        </div>
+
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    </div>
+
+
+
+{% endblock %}
+
+{% block jsinline %}
+    <script type="text/javascript" src="/static/js/ko-clock.js"></script>
+    {% block jsinline2 %}
+    {% endblock %}
+{% endblock %}

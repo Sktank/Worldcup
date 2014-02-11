@@ -1,0 +1,55 @@
+{% extends 'home/header.html' %}
+
+{% block content %}
+
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-2">
+            <h4 id="sidebar-header"></h4>
+            <div class="tabbable tabs-left" id="sidebar">
+            </div>
+        </div>
+        <div class="col-md-8" id="content">
+        </div>
+
+    </div>
+
+    <!-- Templates for Teams-->
+    <script type="text/template" id="team-list-item">
+        <a href='#teams/<%= id %>'><%= country %></a>
+    </script>
+
+    <script type="text/template" id="team-summary">
+        <div class="col-md-4">
+        <div class="row">
+        <a href="#teams/<%= id %>">
+        <img src="/static/img/<%= country %>.png" class="team-img-small">
+        </a>
+        </div>
+            <div class="centered-team-name">
+                <a href='#teams/<%= id %>'> <%= country %></a>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="team-details">
+            <h4>Country: <%= country %></h4>
+            <h4>Rank: <%= rank %></h4>
+            <h5>Description: <%= description %></h5>
+    </script>
+
+    <!-- Templates for Stadiums-->
+    <script type="text/template" id="stadium-list-item">
+        <a href='#stadiums/<%= id %>'><%= name %></a>
+    </script>
+
+    <script type="text/template" id="stadium-details">
+        <h4>Name: <%= name %></h4>
+        <h4>City: <%= city %></h4>
+        <h5>Seats: <%= seats %></h5>
+        <h5>Lon: <%= longitude %></h5>
+        <h5>Lat: <%= latitude %></h5>
+
+    </script>
+
+
+{% endblock %}

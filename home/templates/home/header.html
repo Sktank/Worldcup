@@ -1,0 +1,43 @@
+{% extends 'home/base.html' %}
+
+{% block clock %}
+    <div id="ko-clock">
+        <div class="col-md-12">
+            <h4 class="clock_header">WC Countdown</h4>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-3">
+                <h3 data-bind="text: days"></h3>
+                <h5 class="clock_label"><small>Days</small></h5>
+            </div>
+            <div class="col-md-3">
+                <h3 data-bind="text: hours"></h3>
+                <h5 class="clock_label"><small>Hours</small></h5>
+            </div>
+            <div class="col-md-3">
+                <h3 data-bind="text: minutes"></h3>
+                <h5 class="clock_label"><small>Minutes</small></h5>
+            </div>
+            <div class="col-md-3">
+                <h3 data-bind="text: seconds"></h3>
+                <h5 class="clock_label"><small>Seconds</small></h5>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block navbar %}
+    <ul class="nav nav-tabs nav-justified">
+        <li id="nav-news"><a href="#news">News</a></li>
+        <li id="nav-matches"><a href="#matches">Matches</a></li>
+        <li id="nav-stream"><a href="#stream">Stream</a></li>
+        <li id="nav-standings"><a href="#standings">Standings</a></li>
+        <li id="nav-teams"><a href="#teams">Teams</a></li>
+        <li id="nav-stadiums"><a href="#stadiums">Stadiums</a></li>
+    </ul>
+{% endblock %}
+
+
+{% block logo_img %}
+    <img id="wc_logo_cup" src="static/img/wc_logo_cup.jpg"/>
+{% endblock %}
